@@ -7,7 +7,7 @@
 </p>
 
 ## Install
-
+The BOT_USERNAME, OAUTH_TOKEN, CHANNEL_NAME environment variables must exist.
 ```sh
 pip install -r requirements.txt & npm run start
 ```

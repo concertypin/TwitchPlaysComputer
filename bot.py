@@ -9,6 +9,7 @@ class KeyIsStr(Exception):
         super().__init__("Key Up/Down with str is not acceptable")
 
 
+"""
 def MakeKeyPress(key, flag=None, delay=0):
     if (len(key) != 1 and flag is not None):
         raise KeyIsStr
@@ -20,23 +21,35 @@ def MakeKeyPress(key, flag=None, delay=0):
     elif (flag == False):
         # 떼기만 하기
         pyautogui.keyUp(key)
-
+    
     elif (flag is None and len(key) != 1):
         # 긴 문장 입력
         pyautogui.write(key, interval=delay)
     else:
         # 눌렀다 떼기
         pyautogui.press(key, interval=delay)
+"""
+
+
+def MakeKeyPress(key, delay=0):
+    time.sleep(1)
+    if (len(key) != 1):
+        pyautogui.write(key, interval=delay)
+    else:
+        pyautogui.press(key, interval=delay)
 
 
 def main(command):
-    print("python got "+command)
-    if command[:1] != "!":  # 명령어 아니면 정지
+    print("python got " + command)
+    if (command[:1] != "#"):  # 명령어 아니면 정지
         return
+    if (command.isalpha() == False):  # 영어 아니면 정지
+        return
+
     cmd = command[1:]  # 명령어 다듬기
     print("->" + cmd, end="")  # 채팅 받음
-    MakeKeyPress(cmd[2:])  # 버튼 진짜로 누르기
-    print(", pressed", cmd[2:])  # 리턴
+    MakeKeyPress(cmd)  # 버튼 진짜로 누르기
+    print(", pressed", cmd)  # 리턴
 
 
 if __name__ == "__main__":
