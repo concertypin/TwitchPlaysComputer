@@ -13,11 +13,11 @@ pip install -r requirements.txt & npm run start
 ```
 
 ## Usage
-
 ```sh
 npm run start
 ```
-
+You can now enter #character in the Twitch Channel chat room at CHANNEL_NAME.<br>
+If you want to exit, you can turn on the scroll to pause the command.
 ## Author
 
 * Github: [@rophin](https://github.com/rophin)

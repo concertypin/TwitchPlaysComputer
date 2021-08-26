@@ -30,6 +30,11 @@ def MakeKeyPress(key, flag=None, delay=0):
         pyautogui.press(key, interval=delay)
 """
 
+def GetScrollLock():
+    import ctypes
+    hllDll = ctypes.WinDLL("User32.dll")
+    VK_CAPITAL = 0x91
+    return hllDll.GetKeyState(VK_CAPITAL)
 
 def MakeKeyPress(key, delay=0):
     time.sleep(1)
@@ -40,6 +45,8 @@ def MakeKeyPress(key, delay=0):
 
 
 def main(command):
+    if(GetScrollLock()==1):
+        return
     print("python got " + command)
     if (command[:1] != "#"):  # 명령어 아니면 정지
         return
