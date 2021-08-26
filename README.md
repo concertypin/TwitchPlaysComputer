@@ -33,7 +33,7 @@ Give a ⭐️ if this project helped you!
 ## 📝 License
 
 This project is [MIT License](https://github.com/rophin/TwitchPlaysComputer/blob/main/LICENSE) licensed.
-Many of the bot.js of this code are from [here][https://dev.twitch.tv/docs/irc].
+Many of the bot.js of this code are from [here](https://dev.twitch.tv/docs/irc).
 
 ***
 _This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
