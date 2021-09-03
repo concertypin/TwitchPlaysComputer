@@ -13,6 +13,9 @@ pip install -r requirements.txt & npm run start
 ```
 
 ## 사용법
+
+### 잠깐만요!
+이 코드는 조금 무식하게 작성되었어요. 이 말을 달리 하면, 보안 장치를 만들어두지 않았다는 소리에요. 아무도 없는 한적한 곳에서의 테스트가 아니라면, 제발, 제발, <strong>제발</strong> 가상 머신 안에서만 실행해주세요.
 ```sh
 npm run start
 ```
