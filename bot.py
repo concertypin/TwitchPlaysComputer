@@ -37,11 +37,8 @@ def GetScrollLock():
     return hllDll.GetKeyState(VK_CAPITAL)
 
 def MakeKeyPress(key, delay=0):
-    time.sleep(1)
-    if (len(key) != 1):
-        pyautogui.write(key, interval=delay)
-    else:
-        pyautogui.press(key, interval=delay)
+    time.sleep(delay)
+    pyautogui.press(key, interval=delay)
 
 
 def main(command):
@@ -54,10 +51,21 @@ def main(command):
         return
 
     cmd = command[1:]  # 명령어 다듬기
+    """
+    special={"<left>":"left","<right>":"right","<up>":"up","<down>":"down",
+        "<shift>":"shift","<tab>":"\t","<ctrl>":"ctrl",
+        "<del>":"del","<home>":"home","<end>":"end", "<pgup>":"pgup","<pgdown>":"pgdown",
+        "<esc>":"esc","<win>":"win"}
+    """
     print("->" + cmd, end="")  # 채팅 받음
     MakeKeyPress(cmd)  # 버튼 진짜로 누르기
     print(", pressed", cmd)  # 리턴
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    try:
+        main(sys.argv[1])
+    except:
+        pass
+    finally:
+        main(sys.argv[1])
